@@ -4,7 +4,11 @@ import java.io.InputStream;
 
 public class FileReader {
 
-    public FileReader(String fileName) {
+    public static FileReader create(String fileName){
+        return null;
+    }
+
+    private FileReader(String fileName) {
         //TODO Open file
         //InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
     }

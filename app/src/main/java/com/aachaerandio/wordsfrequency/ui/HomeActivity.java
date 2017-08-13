@@ -6,6 +6,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.aachaerandio.wordsfrequency.FileReader;
 import com.aachaerandio.wordsfrequency.R;
 import com.aachaerandio.wordsfrequency.presenter.HomePresenter;
 
@@ -29,8 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         HomePresenter homePresenter = new HomePresenter();
-
-        adapter = new WordAdapter(homePresenter.loadData());
+        adapter = new WordAdapter(homePresenter.loadData(FileReader.create("fileName.txt")));
         recyclerView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
