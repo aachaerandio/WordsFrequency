@@ -8,9 +8,16 @@ public class FileReaderTest {
 
     @Test
     public void should_open_file_successfully() throws Exception {
-        FileReader fileReader = FileReader.create("test_one_line.txt");
+        //Given
+        String fileName = "test_one_line.txt";
+
+        //When
+        FileReader fileReader = FileReader.create(fileName);
+
+        //Then
         assertNotNull(fileReader);
         assertTrue(true);
+
         fileReader.close();
     }
 
@@ -42,7 +49,7 @@ public class FileReaderTest {
         FileReader fileReader = FileReader.create("test_ignorable_content.txt");
         assertNotNull(fileReader);
         String line = fileReader.readLine();
-        assertEquals("hello world", line);
+        assertEquals("hello world!", line);
         fileReader.close();
     }
 
