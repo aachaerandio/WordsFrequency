@@ -27,10 +27,13 @@ public class HomePresenterTest {
 
     @Test
     public void should_load_data_successfully() throws Exception {
-        when(fileReader.readLine()).thenReturn("hello hello world");
+        when(fileReader.readLine())
+                .thenReturn("hello hello world")
+                .thenReturn("HELLO! world")
+                .thenReturn(null);
         List<WordItem> wordItems = homePresenter.loadData(fileReader);
-        Assert.assertTrue(wordItems.contains(new WordItem("hello","2")));
-        Assert.assertTrue(wordItems.contains(new WordItem("world","1")));
+        Assert.assertTrue(wordItems.contains(new WordItem("hello","3")));
+        Assert.assertTrue(wordItems.contains(new WordItem("world","2")));
     }
 
     @Test

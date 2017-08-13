@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         HomePresenter homePresenter = new HomePresenter();
-        adapter = new WordAdapter(homePresenter.loadData(FileReader.create("fileName.txt")));
+        adapter = new WordAdapter(homePresenter.loadData(FileReader.create("assets/book.txt")));
         recyclerView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();

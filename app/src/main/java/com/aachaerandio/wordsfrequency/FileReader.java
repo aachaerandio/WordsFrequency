@@ -42,8 +42,13 @@ public class FileReader {
         return line;
     }
 
+    /**
+     * Validate if the line contains at least a word character.
+     * @param line
+     * @return
+     */
     private boolean validateLine(String line) {
-        return !line.replaceAll("\\W", " ").trim().equals("");
+        return line.matches(".*\\w+.*");
     }
 
     public void close(){
